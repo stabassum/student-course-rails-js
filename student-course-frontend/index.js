@@ -18,8 +18,6 @@ function getStudents(){
 }
 
 
-
-
 function render(card){
 
         let container = document.querySelector('#card-container');
@@ -32,6 +30,11 @@ function render(card){
 
         // let p1 = document.createElement('p')
         // p1.innerText = card.time_preference
+
+        let button = document.createElement('button')
+        button.setAttribute('class', 'add-btn')
+        button.setAttribute('id', card.id)
+        button.innerText = "A"
 
         container.append(h2, p)
         
