@@ -20,21 +20,13 @@ function getStudents(){
 
 function render(card){
 
-        let container = document.querySelector('#card-container');
+        let container = document.querySelector('#cards');
         
         let h2 = document.createElement('h2')
         h2.innerText = card.name
 
         let p = document.createElement('p')
         p.innerText = card.description
-
-        // let p1 = document.createElement('p')
-        // p1.innerText = card.time_preference
-
-        let button = document.createElement('button')
-        button.setAttribute('class', 'add-btn')
-        button.setAttribute('id', card.id)
-        button.innerText = "A"
 
         container.append(h2, p)
         

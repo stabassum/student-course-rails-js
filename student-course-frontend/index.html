@@ -1,51 +1,55 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootcamp Registration</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="index.js"></script>
-</head>
-<body>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootcamp Registration</title>
+        <link rel="stylesheet" href="style/style.css">
+        <script type="text/javascript" src="src/index.js"></script>
+    </head>
 
-    <div id="form-container">
-        <form id="create-card-form">
-            <h3>Technology Bootcamp Registration Portal</h3>
-            <p><em>Admin Application - application to register students to confirm their seat</em></p>
-            
-            <label>Full Name: </label>
-            <input id='full-name' type="text" name="fullname" value="" placeholder="Full Name" class="input-text">
-            <br><br>
-            
-            <label>E-mail: </label>
-            <input id='email' type="text" name="email" value="" placeholder="email" class="input-text">
-            <br><br>
-            
-            <label>Time Preference: </label>
-            <input id='time-preference' type="text" name="timepreference" value="" placeholder="Time Preference" class="input-text">
-            <br><br>
+    <body>
 
-            <label>Bootcamp Selection</label>
-            <select id="decks" name="decks">
-                <option value="1">Software Engineering Bootcamp</option>
-                <option value="2">Cybersecurity Bootcamp</option>
-                <option value="3">Data Science Bootcamp</option>
-            </select>
+        <div id="container">
+            <form id="card-form" class="card-registration-form">
+                <h3>Technology Bootcamp Registration Portal</h3>
+                
+                <p><em><b>This application is for admin only, who will register students into the system.</b></em></p>
+
+                <label>Full Name: </label>
+                <input id='full-name' type="text" name="fullname" value="" placeholder="Full Name" class="input-text">
+                <br><br>
+                
+                <label>E-mail: </label>
+                <input id='email' type="text" name="email" value="" placeholder="Email" class="input-text">
+                <br><br>
+                
+                <label>Time Preference: </label>
+                <input id='time-preference' type="text" name="timepreference" value="" placeholder="Time Preference" class="input-text">
+                <br><br>
+
+                <label>Bootcamp Selection</label>
+
+                <select id="bootcamps" name="bootcamps">
+                    <option value="software_engineering">Software Engineering Bootcamp</option>
+                    <option value="cybersecurity">Cybersecurity Bootcamp</option>
+                    <option value="data_science">Data Science Bootcamp</option>
+                </select>
+                
+                <br>
+                <br>
+
+                <input id="create-button" type="submit" name="submit" value="Register" class="submit">
+            </form>
+    
+            </div>
             
             <br>
-            <br>
 
-            <input id="create-button" type="submit" name="submit" value="Register" class="submit">
-        </form>
-   
-        </div>
-        
-        <br>
-        <br>
+            <div id="cards">
 
-        <div id="card-container">
-
-        </div>
-</body>
+            </div>
+    </body>
 </html>
