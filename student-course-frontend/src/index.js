@@ -7,27 +7,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-function getStudents(){
+// function getStudents(){
+//     fetch(COURSES_URL)
+//     .then(resp => resp.json())
+//     .then(cards => {
+//         cards.forEach(card => {
+//             render(card)
+//         })
+//     })
+// }
+
+
+// function render(card){
+
+//         let container = document.querySelector('#cards');
+        
+//         let h2 = document.createElement('h2')
+//         h2.innerText = card.name
+
+//         let p = document.createElement('p')
+//         p.innerText = card.description
+
+//         container.append(h2, p)
+        
+// }
+
+function getCards(){
     fetch(COURSES_URL)
     .then(resp => resp.json())
     .then(cards => {
-        cards.forEach(card => {
-            render(card)
+        cards.data.forEach(card => {
+            const thisCard = document.querySelector("#container")
+            const newCard
         })
     })
-}
-
-
-function render(card){
-
-        let container = document.querySelector('#cards');
-        
-        let h2 = document.createElement('h2')
-        h2.innerText = card.name
-
-        let p = document.createElement('p')
-        p.innerText = card.description
-
-        container.append(h2, p)
-        
 }
