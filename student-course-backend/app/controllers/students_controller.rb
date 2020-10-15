@@ -1,21 +1,24 @@
 class StudentsController < ApplicationController
 
+    # show all the students
+
     def index
         students = Student.all
-        render json: students.to_json(only: [:full_name, :email, :time_preference])
+        render json: StudentSerializer.new(students)
     end
+
+    # show an individual record
 
     def show
         student = Student.find_by(id: params[:id])
-        if student
-            render json: student.to_json(only: [:full_name, :email, :time_preference])
-        else
-            render json: {message: 'No student found with that id'}
-        end
+        render json: StudentSerializer.new(student)
     end
 
-    def create
-        
+    # delete a student record from the database
+
+    def destroy
+        student = Student.find_by(id: params[:id])
+        student.destroy
     end
 
 end
