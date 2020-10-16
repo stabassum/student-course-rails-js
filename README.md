@@ -1,6 +1,6 @@
 # Front-End Portfolio Project : Student-Course-Rails-JavaScript
 
-## Draft Diagram of Application (Initial Planning Phase Diagram)
+## Draft Diagram of Application (Initial Planning Phase Diagram) / About This Application
 ![rails_js_project (1)](https://user-images.githubusercontent.com/20411568/96211711-0d949980-0f43-11eb-8b02-cd0a2b580c78.png)
 
 ## Starting the Application
@@ -11,10 +11,11 @@ This application can be run locally. Make sure <a href="https://rubyonrails.org"
 3. `rails s` To get the rails server running
 4. change directory (cd) to `./student-course-frontend` and double-click `index.html` 
 
-
-## About This Application
-
 ## What The Application is Supposed to Accomplish for the User
+
+1. Allow the "Admin" (user) to view all of the students registered for a particular course
+2. Allow the "Admin" to register a student for a particular course 
+3. Allow the "Admin" to delete a particular student registered for a particular course
 
 ## Project File Structure
 ```
