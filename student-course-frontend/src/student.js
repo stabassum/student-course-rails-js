@@ -15,7 +15,6 @@ class Student  {
 
     }
 
-
 }
 
 // store all the students in an array
