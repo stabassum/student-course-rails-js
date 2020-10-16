@@ -33,7 +33,7 @@ student-course-rails-js
 │   └── db
 │       ├── migrate
 │       │   ├── 20200928184552_create_courses.rb
-│       │   └── 20200225221159_create_storage_areas.rb
+│       │   └── 20200928184626_create_students.rb
 │       ├── schema.rb
 │       └── seeds.rb
 │
