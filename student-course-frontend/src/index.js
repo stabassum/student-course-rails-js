@@ -1,44 +1,41 @@
-const BASE_URL = "http://localhost:3000"
-const COURSES_URL = `${BASE_URL}/courses`
-const STUDENTS_URL = `${BASE_URL}/students`
+const studentsEndPoint = "http://localhost:3000/students"
+const coursesEndPoint = "http://localhost:3000/courses"
 
-document.addEventListener("DOMContentLoaded", () => {
-    getStudents()
+// Load contents to the DOM
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Additional functions will be written in JS if functionalities to create students/courses is decided
+
+    getCourses(); // will display all of the courses
 })
 
-// function getStudents(){
-//     fetch(COURSES_URL)
-//     .then(resp => resp.json())
-//     .then(cards => {
-//         cards.forEach(card => {
-//             render(card)
-//         })
-//     })
-// }
+// Display all students
 
+function renderStudents(){
 
-// function render(card){
-
-//         let container = document.querySelector('#cards');
-        
-//         let h2 = document.createElement('h2')
-//         h2.innerText = card.name
-
-//         let p = document.createElement('p')
-//         p.innerText = card.description
-
-//         container.append(h2, p)
-        
-// }
-
-function getCards(){
-    fetch(COURSES_URL)
-    .then(resp => resp.json())
-    .then(cards => {
-        cards.data.forEach(card => {
-            const thisCard = document.querySelector("#container")
-            const newCard
-        })
-    })
 }
+
+// May add postStudent if a functionality to create a new entry of students is decided upon
+// This will use the POST method
+
+// Delete a student record from the DOM
+function deleteStudent(e){
+
+}
+
+function getCourses(){
+
+}
+
+// Delete a course record from the DOM
+function deleteCourse(e){
+
+}
+
+// May add a postCourses if a functionality to create new course is allowed which will use POST method
+// Most probably not -- may not want to add such functionality
+
+// If creating a student is decided - createStudentFormHandler(e) function will be added
+
+// If creating a course if decided - createCourseFormHandler(e) function will be added
