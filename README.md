@@ -6,10 +6,11 @@
 ## Starting the Application
 
 This application can be run locally. Make sure <a href="https://rubyonrails.org">Rails</a> is installed. Once Rails is installed, navigate to the Rails back end folder located at : `./student-course-backend` and run the following commands in your terminal:
-1. `rails db:migrate`
-2. `rails db:seed`
-3. `rails s` To get the rails server running
-4. change directory (cd) to `./student-course-frontend` and double-click `index.html` 
+1. `bundle install`
+2. `rails db:migrate`
+3. `rails db:seed`
+4. `rails s` To get the rails server running
+5. change directory (cd) to `./student-course-frontend` and double-click `index.html` 
 
 ## What The Application is Supposed to Accomplish for the User
 
