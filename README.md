@@ -3,7 +3,14 @@
 ## Draft Diagram of Application (Initial Planning Phase Diagram)
 ![rails_js_project (1)](https://user-images.githubusercontent.com/20411568/96211711-0d949980-0f43-11eb-8b02-cd0a2b580c78.png)
 
-## Getting Started
+## Starting the Application
+
+This application can be run locally. Make sure <a href="https://rubyonrails.org">Rails</a> is installed. Once Rails is installed, navigate to the Rails back end folder located at : `./student-course-backend` and run the following commands in your terminal:
+1. `rails db:migrate`
+2. `rails db:seed`
+3. `rails s` To get the rails server running
+4. change directory (cd) to `./student-course-frontend` and double-click `index.html` 
+
 
 ## About This Application
 
