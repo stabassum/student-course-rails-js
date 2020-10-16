@@ -1,4 +1,4 @@
-# Front-End Portfolio Project : Student-Course-Rails-JavaScript
+# Front-End Project : Student-Course-Rails-JavaScript
 
 ## Draft Diagram of Application (Initial Planning Phase Diagram) / About This Application
 ![rails_js_project (1)](https://user-images.githubusercontent.com/20411568/96211711-0d949980-0f43-11eb-8b02-cd0a2b580c78.png)
