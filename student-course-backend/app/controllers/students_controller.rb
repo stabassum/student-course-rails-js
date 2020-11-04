@@ -7,6 +7,17 @@ class StudentsController < ApplicationController
         render json: StudentSerializer.new(students)
     end
 
+    # create a new student
+
+    def create
+        student = Student.create(student_params)
+        if student.save
+            render json: StudentSerializer.new(student), status: :accepted
+        else
+            render json: {errors: student.errors.full_messages}, status: :unprocessible_entity
+        end
+    end
+
     # show an individual record
 
     def show
@@ -19,6 +30,10 @@ class StudentsController < ApplicationController
     def destroy
         student = Student.find_by(id: params[:id])
         student.destroy
+    end
+
+    def student_params
+    
     end
 
 end
