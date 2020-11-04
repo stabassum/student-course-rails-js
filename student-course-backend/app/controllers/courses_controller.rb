@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     end
 
     def create
-    
+        course = Course.new(course_params)
     end
 
     def show
@@ -18,6 +18,10 @@ class CoursesController < ApplicationController
     def destroy
         course = Course.find_by(id: params[:id])
         course.destroy
+    end
+
+    def course_params
+        params.require(:course).permit(:name, :description)
     end
 
 end
