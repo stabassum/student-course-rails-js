@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-    
+        params.require(:student).permit(:full_name, :email, :time_preference, :course_id)
     end
 
 end
