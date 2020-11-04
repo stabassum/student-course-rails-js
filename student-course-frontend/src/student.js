@@ -15,11 +15,13 @@ class Student  {
         const studentCards = document.querySelector('#card-container')
 
         const cardMarkup = `
-            <div class="single-card" id=${this.id} style="background-color:pink">
+            <br>
+            <div class="single-card" id=${this.id} style="border: 4px dotted red">
                 <h3 class="card-full-name">Student Full Name : ${this.full_name}</h3>
                 <h3 class="card-email">Student Email : ${this.email}</h3>
                 <h3 class="card-time-preference">Student Time Preference : ${this.time_preference}</h3>
             </div>
+            <br>
         `;
 
         let element = document.createElement('div')
