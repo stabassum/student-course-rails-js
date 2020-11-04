@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const createStudentCardForm = document.querySelector("#card-form");
     createStudentCardForm.addEventListener("submit", (e) => createStudentFormHandler(e));
 
-    // const createCourseForm = document.querySelector("#course-form");
-    // createCourseForm.addEventListener("submit", (e) => createCourseFormHandler(e));
+    const createCourseForm = document.querySelector("#course-form");
+    createCourseForm.addEventListener("submit", (e) => createCourseFormHandler(e));
 
     getCourses(); // will display all of the courses
 })
@@ -38,7 +38,7 @@ function renderStudents(e){
     })
 }
 
-// POST student is not working entirely
+// POST student 
 
 function postStudent(full_name, email, time_preference, course_id){
     const bodyData = {full_name, email, time_preference, course_id}
@@ -90,21 +90,21 @@ function getCourses(){
     })
 }
 
-// POST not entirely working
+// POST COURSE
 
-// function postCourse(name){
-//     fetch(coursesEndPoint, {
-//         method: "POST",
-//         headers: {"Content-Type": "application/json"},
-//         body: JSON.stringify({name})
-//     })
-//     .then(resp => resp.json())
-//     .then(course => {
-//         const newCourse = new Course(course.data)
-//         newCourse.renderCourse();
-//     })
-//     .catch(error => {alert(error.message)})
-// }
+function postCourse(name){
+    fetch(coursesEndPoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({name})
+    })
+    .then(resp => resp.json())
+    .then(course => {
+        const newCourse = new Course(course.data)
+        newCourse.renderCourse();
+    })
+    .catch(error => {alert(error.message)})
+}
 
 // delete course is working
 function deleteCourse(e){
@@ -125,7 +125,7 @@ function deleteCourse(e){
     .catch(error => {alert(error.message)})
 }
 
-// create student not working entirely
+// create student 
 
 function createStudentFormHandler(e){
     e.preventDefault()
@@ -137,11 +137,11 @@ function createStudentFormHandler(e){
     postStudent(fullNameInput, emailInput, timePreferenceInput, courseId)
 }
 
-// create course not working entirely
+// create course 
 
-// function createCourseFormHandler(e){
-//     e.preventDefault()
-//     const nameInput = document.querySelector('#input-name-course').value
-//     const descriptionInput = document.querySelector('#input-description-course').value
-//     postCourse(nameInput, descriptionInput)
-// }
+function createCourseFormHandler(e){
+    e.preventDefault()
+    const nameInput = document.querySelector('#input-name-course').value
+    const descriptionInput = document.querySelector('#input-description-course').value
+    postCourse(nameInput, descriptionInput)
+}
