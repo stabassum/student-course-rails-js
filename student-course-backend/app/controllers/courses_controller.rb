@@ -6,6 +6,10 @@ class CoursesController < ApplicationController
         # render json: CourseSerializer.new(courses)
     end
 
+    def create
+    
+    end
+
     def show
         course = Course.find_by(id: params[:id])
         render json: CourseSerializer.new(course)

@@ -20,6 +20,9 @@ anne_doe = Student.create(full_name: "Anne Doe", email: "adoe@yahoo.com", time_p
 
 frank_doe = Student.create(full_name: "Frank Doe", email: "fdoe@yahoo.com", time_preference: "Evening", course_id: software_engineering.id)
 
+mary_anne = Student.create(full_name: "Mary Anne", email: "example@yahoo.com", time_preference: "Morning", course_id: software_engineering.id)
+
+
 # run the rails console to view all of the students for a particular bootcamp
 # the following command for instance will show all of the students for the software engineering bootcamp, which are two students
 # Course.find_by(id: 1).students

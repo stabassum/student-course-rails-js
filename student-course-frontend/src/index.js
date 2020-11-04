@@ -5,8 +5,8 @@ const coursesEndPoint = "http://localhost:3000/courses"
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // const createStudentCardForm = document.querySelector("#card-form");
-    // createStudentCardForm.addEventListener("submit", (e) => createStudentFormHandler(e));
+    const createStudentCardForm = document.querySelector("#card-form");
+    createStudentCardForm.addEventListener("submit", (e) => createStudentFormHandler(e));
 
     // const createCourseForm = document.querySelector("#course-form");
     // createCourseForm.addEventListener("submit", (e) => createCourseFormHandler(e));
@@ -40,22 +40,22 @@ function renderStudents(e){
 
 // POST student is not working entirely
 
-// function postStudent(full_name, email, time_preference, course_id){
-//     const bodyData = {full_name, email, time_preference, course_id}
+function postStudent(full_name, email, time_preference, course_id){
+    const bodyData = {full_name, email, time_preference, course_id}
 
-//     fetch(studentsEndPoint, {
-//         method: "POST",
-//         headers: {"Content-Type": "application/json"},
-//         body: JSON.stringify(bodyData)
-//     })
-//     .then(resp => resp.json())
-//     .then(student => {
-//         let newStudent = new Student(student.data)
-//         newStudent.renderStudent()
-//         location.reload()
-//     })
-//     .catch(error => {alert(error.message)})
-// }
+    fetch(studentsEndPoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(bodyData)
+    })
+    .then(resp => resp.json())
+    .then(student => {
+        let newStudent = new Student(student.data)
+        newStudent.renderStudent()
+        location.reload()
+    })
+    .catch(error => {alert(error.message)})
+}
 
 // Delete student is working
 
@@ -127,15 +127,15 @@ function deleteCourse(e){
 
 // create student not working entirely
 
-// function createStudentFormHandler(e){
-//     e.preventDefault()
-//     const fullNameInput = document.querySelector('#full-name').value
-//     const emailInput = document.querySelector('#email').value
-//     const timePreferenceInput = document.querySelector('#time-preference').value
-//     const courseId = parseInt(document.querySelector('#course-list').value)
+function createStudentFormHandler(e){
+    e.preventDefault()
+    const fullNameInput = document.querySelector('#full-name').value
+    const emailInput = document.querySelector('#email').value
+    const timePreferenceInput = document.querySelector('#time-preference').value
+    const courseId = parseInt(document.querySelector('#course-list').value)
 
-//     postStudent(fullNameInput, emailInput, timePreferenceInput, courseId)
-// }
+    postStudent(fullNameInput, emailInput, timePreferenceInput, courseId)
+}
 
 // create course not working entirely
 
