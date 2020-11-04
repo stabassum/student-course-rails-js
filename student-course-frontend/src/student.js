@@ -15,10 +15,10 @@ class Student  {
         const studentCards = document.querySelector('#card-container')
 
         const cardMarkup = `
-            <div class="single-card" id=${this.id}>
-                <h3 class="card-full-name">${this.full_name}</h3>
-                <h3 class="card-email">${this.email}</h3>
-                <h3 class="card-time-preference">${this.time_preference}</h3>
+            <div class="single-card" id=${this.id} style="background-color:pink">
+                <h3 class="card-full-name">Student Full Name : ${this.full_name}</h3>
+                <h3 class="card-email">Student Email : ${this.email}</h3>
+                <h3 class="card-time-preference">Student Time Preference : ${this.time_preference}</h3>
             </div>
         `;
 
@@ -26,12 +26,6 @@ class Student  {
         element.innerHTML = cardMarkup
         studentCards.appendChild(element)
 
-        // let deleteStudentCard = document.createElement('button')
-        // deleteStudentCard.setAttribute("id", this.id)
-        // deleteStudentCard.innerHTML = "Delete Student"
-
-        // deleteStudentCard.addEventListener("click", (e) =>) deleteCard(e))
-        // studentCards.appendChild(deleteStudentCard)
         let removeStudent = document.createElement('button')
         removeStudent.setAttribute("id", this.id)
         removeStudent.innerHTML = "Remove Student"
