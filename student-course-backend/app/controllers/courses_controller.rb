@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
 
     def create
         course = Course.new(course_params)
+        if course.save
+            render json: CourseSerializer.new(course), status: :accepted
+        else
+            render json: {errors: deck.errors.full_message}, status: :unprocessible_entity
+        end
     end
 
     def show
