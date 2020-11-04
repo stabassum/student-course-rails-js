@@ -12,7 +12,26 @@ class Student  {
     }
 
     renderStudent(){
+        const studentCards = document.querySelector('#cards')
 
+        const cardMarkup = `
+            <div class="single-card" id=${this.id}>
+                <h3 class="card-full-name">${this.full_name}</h3>
+                <h3 class="card-email">${this.email}</h3>
+                <h3 class="card-time-preference">${this.time_preference}</h3>
+            </div>
+        `;
+
+        let element = document.createElement('div')
+        element.innerHTML = cardMarkup
+        studentCards.appendChild(element)
+
+        // let deleteStudentCard = document.createElement('button')
+        // deleteStudentCard.setAttribute("id", this.id)
+        // deleteStudentCard.innerHTML = "Delete Student"
+
+        // deleteStudentCard.addEventListener("click", (e) =>) deleteCard(e))
+        // studentCards.appendChild(deleteStudentCard)
     }
 
 }

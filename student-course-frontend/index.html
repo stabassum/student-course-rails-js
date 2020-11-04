@@ -18,30 +18,43 @@
     <body>
 
         <div id="container">
-           
-            <form id="card-form" class="card-registration-form">
-                <h3>Technology Bootcamp Registration Portal</h3>
-                
-                <p><em><b><u>Admin View : Permission to Register Students</u></b></em></p>
 
+            <h1>Technology Bootcamp Registration Portal</h1>
+            <p><em>Admin View : Permission to Register Students</em></p>
+            
+            <form id="course-form">
+                <h3>Add New Bootcamp</h3>
+                <input id="input-name-course" type="text" placeholder="Name"></input>
+                <br>
+                <input id="input-description-course" type="text" placeholder="Description"></input>
+                <br>
+                <br>
+                <input id="create-button" type="submit" name="submit" value="Add New Course" class="submit"></input>
+            </form>
+
+            <br>
+            <br>
+
+            <h3>Add Student Information for Course Registration</h3>
+
+            <form id="card-form" class="card-registration-form">
+                
                 <label>Full Name: </label>
                 <input id='full-name' type="text" name="fullname" value="" placeholder="Full Name" class="input-text">
-                <br><br>
+                <br>
                 
                 <label>E-mail: </label>
                 <input id='email' type="text" name="email" value="" placeholder="Email" class="input-text">
-                <br><br>
+                <br>
                 
                 <label>Time Preference: </label>
                 <input id='time-preference' type="text" name="timepreference" value="" placeholder="Time Preference" class="input-text">
-                <br><br>
+                <br>
 
                 <label>Bootcamp Selection</label>
 
-                <select id="bootcamps" name="bootcamps">
-                    <option value="software_engineering">Software Engineering Bootcamp</option>
-                    <option value="cybersecurity">Cybersecurity Bootcamp</option>
-                    <option value="data_science">Data Science Bootcamp</option>
+                <select id="course-list" name="bootcamps">
+ 
                 </select>
                 
                 <br>
@@ -54,8 +67,16 @@
             
             <br>
 
-        <div id="cards">
-            <h3 style="text-align: center;">Currently Enrolled Students</h3>
+        <div id="course-selector">
+            <h3>Select a Course to see it's students</h3>
+
+        </div>
+
+        <br>
+        <br>
+        
+        <div id="card-container">
+
         </div>
 
     </body>
