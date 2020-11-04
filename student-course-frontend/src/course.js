@@ -5,7 +5,7 @@ class Course {
         this.name = course.attributes.name
         this.description = course.attributes.description
         this.students = course.attributes.students
-        // Course.all.push(this)
+        Course.all.push(this)
     }
 
     renderCourse(){

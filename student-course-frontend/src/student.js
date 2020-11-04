@@ -8,11 +8,11 @@ class Student  {
         this.time_preference = student.time_preference
         this.course = student.course_id
 
-        // Student.all.push(this)
+        Student.all.push(this)
     }
 
     renderStudent(){
-        const studentCards = document.querySelector('#cards')
+        const studentCards = document.querySelector('#card-container')
 
         const cardMarkup = `
             <div class="single-card" id=${this.id}>
@@ -32,6 +32,11 @@ class Student  {
 
         // deleteStudentCard.addEventListener("click", (e) =>) deleteCard(e))
         // studentCards.appendChild(deleteStudentCard)
+        let removeStudent = document.createElement('button')
+        removeStudent.setAttribute("id", this.id)
+        removeStudent.innerHTML = "Remove Student"
+        removeStudent.addEventListener("click", (e) => deleteStudent(e))
+        studentCards.appendChild(removeStudent)
     }
 
 }

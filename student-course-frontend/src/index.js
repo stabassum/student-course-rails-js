@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createStudentCardForm.addEventListener("submit", (e) => createStudentFormHandler(e));
     // Additional functions will be written in JS if functionalities to create students/courses is decided
 
-    const createCourseForm = document.querySelector
+    // const createCourseForm = document.querySelector
 
     getCourses(); // will display all of the courses
 })
@@ -31,16 +31,47 @@ function renderStudents(e){
     .then(resp => resp.json())
     .then(course => {
         course.data.attributes.students.forEach(student => {
-            let newStudent = new Student(card)
+            let newStudent = new Student(student)
             newStudent.renderStudent();
         })
         .catch(error => {alert(error.message)})
     })
 }
 
+function postStudent(full_name, email, time_preference, course_id){
+    const bodyData = {full_name, email, time_preference, course_id}
+
+    fetch(studentsEndPoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(bodyData)
+    })
+    .then(resp => resp.json())
+    .then(student => {
+        let newStudent = new Student(student.data)
+        newStudent.renderStudent()
+        location.reload()
+    })
+    .catch(error => {alert(error.message)})
+}
+
 // Delete a student record from the DOM
 function deleteStudent(e){
-
+    fetch(`http://localhost:3000/students/${e.target.id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+    .then(function(resp){
+        if(resp.status = 204)
+            location.reload();
+        else
+            throw new Error(resp.message)
+            console.log(resp.status)
+    })
+    .catch(error => {alert(error.message)})
 }
 
 function getCourses(){
@@ -56,5 +87,31 @@ function getCourses(){
 
 // Delete a course record from the DOM
 function deleteCourse(e){
+    fetch(`http://localhost:3000/courses/${e.target.id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+    .then(function(resp){
+        if(resp.status = 204)
+            location.reload();
+        else
+            throw new Error(resp.message)
+            console.log(resp.status)
+    })
+    .catch(error => {alert(error.message)})
+}
 
+// create student not working entirely
+
+function createStudentFormHandler(e){
+    e.preventDefault()
+    const fullNameInput = document.querySelector('#full-name').value
+    const emailInput = document.querySelector('#email').value
+    const timePreferenceInput = document.querySelector('time-preference')
+    const courseId = parseInt(document.querySelector('#course-list').value)
+
+    postStudent(fullNameInput, emailInput, timePreferenceInput, courseId)
 }
