@@ -31,8 +31,11 @@ function renderStudents(e){
     fetch(`http://localhost:3000/courses/${e.target.id}`)
     .then(resp => resp.json())
     .then(course => {
-        course.data.attributes.students.forEach(student => {
+        course.data.attributes.students.sort((a,b) => (a.full_name.toLowerCase() > b.full_name.toLowerCase()) ? 1 : (a.full_name.toLowerCase() < b.full_name.toLowerCase()) ? -1 : 0).forEach(student => {
             let newStudent = new Student(student)
+            // sort the students array list then render each student
+           // newStudent.sort((a,b) => (a.full_name > b.full_name) ? 1 : (a.full_name < b.full_name) ? -1 : 0)
+
             newStudent.renderStudent()
             //newStudent.renderStudent().sort(); //maybe method chaining? calling sort
             // on just one student and not necessarily the entire array. 
@@ -42,11 +45,11 @@ function renderStudents(e){
             // See how to fix the refresh.
 
             // talk about how to sort and how to just render HTML
-        }).sort(function(a,b){
-            if (a.full_name.toLowerCase() < b.full_name.toLowerCase()) return -1;
-            if (a.full_name.toLowerCase() > b.full_name.toLowerCase()) return 1;
-            return 0; // if they are equal
-        }) // once all students are rendered the students are sorted
+         })//.sort(function(a,b){
+        //     if (a.full_name.toLowerCase() < b.full_name.toLowerCase()) return -1;
+        //     if (a.full_name.toLowerCase() > b.full_name.toLowerCase()) return 1;
+        //     return 0; // if they are equal
+        // }) // once all students are rendered the students are sorted
         // force the sort on an objects property - full_name
         
         .catch(error => {alert(error.message)})
