@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
         if course.save
             render json: CourseSerializer.new(course), status: :accepted
         else
-            render json: {errors: deck.errors.full_message}, status: :unprocessible_entity
+            render json: {errors: course.errors.full_message}, status: :unprocessible_entity
         end
     end
 

@@ -2,7 +2,7 @@ const studentsEndPoint = "http://localhost:3000/students"
 const coursesEndPoint = "http://localhost:3000/courses"
 
 // Load contents to the DOM
-
+// the event listener saves from putting js on bottom
 document.addEventListener('DOMContentLoaded', () => {
 
     const createStudentCardForm = document.querySelector("#card-form");
@@ -25,18 +25,41 @@ function renderStudents(e){
     removeCourse.setAttribute("id", e.target.id)
     // need to create delete function
     removeCourse.addEventListener("click", (e) => deleteCourse(e))
-    studentCards.appendChild(removeCourse)    
+    studentCards.appendChild(removeCourse) 
+
     
     fetch(`http://localhost:3000/courses/${e.target.id}`)
     .then(resp => resp.json())
     .then(course => {
         course.data.attributes.students.forEach(student => {
             let newStudent = new Student(student)
-            newStudent.renderStudent();
-        })
+            newStudent.renderStudent()
+            //newStudent.renderStudent().sort(); //maybe method chaining? calling sort
+            // on just one student and not necessarily the entire array. 
+            // it's not working because I am not calling it on the right place
+            // can give sort more functionalities, ie. each student has specific attributes.
+            // understand how sort works. Work with documentation, MDN & W3Schools - the docs are written as to what you need
+            // See how to fix the refresh.
+
+            // talk about how to sort and how to just render HTML
+        }).sort(function(a,b){
+            if (a.full_name.toLowerCase() < b.full_name.toLowerCase()) return -1;
+            if (a.full_name.toLowerCase() > b.full_name.toLowerCase()) return 1;
+            return 0; // if they are equal
+        }) // once all students are rendered the students are sorted
+        // force the sort on an objects property - full_name
+        
         .catch(error => {alert(error.message)})
     })
 }
+
+// create a sort method for the objects
+// function sortStudents(a, b){
+//        if(a.full_name.toLowerCase() < b.full_name.toLowerCase()) return -1;
+//        if(a.full_name.toLowerCase() > b.full_name.toLowerCase()) return -1;
+//        return 0;
+// }
+
 
 // POST student 
 
@@ -52,7 +75,7 @@ function postStudent(full_name, email, time_preference, course_id){
     .then(student => {
         let newStudent = new Student(student.data)
         newStudent.renderStudent()
-        location.reload()
+        location.reload() // reloads the page so updated infor is shown
     })
     .catch(error => {alert(error.message)})
 }
@@ -143,5 +166,6 @@ function createCourseFormHandler(e){
     e.preventDefault()
     const nameInput = document.querySelector('#input-name-course').value
     const descriptionInput = document.querySelector('#input-description-course').value
+   
     postCourse(nameInput, descriptionInput)
 }

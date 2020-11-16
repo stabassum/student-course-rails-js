@@ -9,6 +9,7 @@ class Student  {
         this.course = student.course_id
 
         Student.all.push(this)
+       
     }
 
     renderStudent(){
@@ -39,3 +40,10 @@ class Student  {
 
 // store all the students in an array
 Student.all = [];
+
+// sort
+// Student.sort(function(a,b){
+//     if(a.full_name.toLowerCase() < b.full_name.toLowerCase()) return -1;
+//     if(a.full_name.toLowerCase() > b.full_name.toLowerCase()) return -1;
+//     return 0;
+// })
