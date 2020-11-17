@@ -30,7 +30,10 @@ function renderStudents(e){
     
     fetch(`http://localhost:3000/courses/${e.target.id}`)
     .then(resp => resp.json())
-    .then(course => {
+    .then(course => { // for the first time there is hold, so easiest way is to call it here
+
+        // sort() higher order function , means that, that function can accept another function , exmaple: not only accepts array/objects, but also other functions
+
         course.data.attributes.students.sort((a,b) => (a.full_name.toLowerCase() > b.full_name.toLowerCase()) ? 1 : (a.full_name.toLowerCase() < b.full_name.toLowerCase()) ? -1 : 0).forEach(student => {
             let newStudent = new Student(student)
             // sort the students array list then render each student
