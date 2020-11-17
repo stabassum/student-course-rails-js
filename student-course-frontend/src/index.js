@@ -32,7 +32,7 @@ function renderStudents(e){
     .then(resp => resp.json())
     .then(course => { // for the first time there is hold, so easiest way is to call it here
 
-        // sort() higher order function , means that, that function can accept another function , exmaple: not only accepts array/objects, but also other functions
+        // sort() higher order function , means that, that function can accept another function
 
         course.data.attributes.students.sort((a,b) => (a.full_name.toLowerCase() > b.full_name.toLowerCase()) ? 1 : (a.full_name.toLowerCase() < b.full_name.toLowerCase()) ? -1 : 0).forEach(student => {
             let newStudent = new Student(student)
