@@ -47,32 +47,3 @@ student-course-rails-js
 │   └── index.html
 └── README.md
 ```
-
-```
-rails-api-full-stack-project
-├── student-course-backend
-│   ├── app
-│   │   ├── controllers
-│   │   │   ├── courses_controller.rb
-│   │   │   └── students_controller.rb
-│   │   ├── models
-│   │   │   ├── course.rb
-│   │   │   └── student.rb
-│   │   └── views
-│   └── db
-│       ├── migrate
-│       │   ├── 001_create_courses.rb
-│       │   └── 002_create_students.rb
-│       ├── schema.rb
-│       └── seeds.rb
-│
-├── student-course-frontend
-│   ├── src
-│   │   ├── course.js
-│   │   ├── index.js
-│   │   └── student.js
-│   ├── style
-│   │   └── style.css
-│   └── index.html
-└── README.md
-```
