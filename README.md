@@ -48,7 +48,8 @@ student-course-rails-js
 └── README.md
 ```
 
-sample-rails-api-fullstack-project
+```
+rails-api-full-stack-project
 ├── student-course-backend
 │   ├── app
 │   │   ├── controllers
@@ -74,4 +75,4 @@ sample-rails-api-fullstack-project
 │   │   └── style.css
 │   └── index.html
 └── README.md
-
+```
